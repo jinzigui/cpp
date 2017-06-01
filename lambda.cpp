@@ -36,7 +36,7 @@ bool SortName(const stTest &val1, const stTest &val2)
  int main()
  {
  	//Lambda way
-  	stTest arrayTest[] = { stTest(10, "xsk"), stTest(20, "Axsk"), stTest(6, "test") };
+  	stTest arrayTest[] = { stTest(10, "axsk"), stTest(20, "Axsk"), stTest(6, "test") };
  	std::sort(arrayTest, arrayTest + 3, [](const stTest &val1, stTest &val2){return val1.dwUserID < val2.dwUserID; });
  	PrintOutStTestInfo(arrayTest);
  	std::sort(arrayTest, arrayTest + 3, [](const stTest &val1, stTest &val2){return strcmp(val1.szUserName, val2.szUserName)== 1? true:false; });
