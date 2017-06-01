@@ -24,8 +24,25 @@ void NewRandFunction()
 	}
 }
 
+void BernoulliFunction()
+{
+	//Calculate the probability
+	cout << "BernoulliFunction" << endl;
+	std::default_random_engine engine(time(nullptr));
+	std::bernoulli_distribution bernoulli(0.1);
+	auto bResult = std::bind(bernoulli, engine);
+	for (int i = 0; i < 100; i++)
+	{
+		if (bResult())
+		{
+			cout << "good" << endl;
+		}
+	}
+}
+
 int main()
 {
 	OldRandFunction();
 	NewRandFunction();
+	BernoulliFunction();
 }
